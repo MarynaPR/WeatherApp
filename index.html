@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WeatherApp</title>
+</head>
+
+<body class="flex-column min-100-vh">
+    <header class="hero"></header>
+    <span id="weather-name"></span>
+    <h1 class="app-title">Weather Dashboard</h1>
+    <!-- <ul class="list-group">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+    </ul> -->
+</body>
+
+<main class="flex-row justify-space-between">
+    <div class="col-12 col-md-4">
+        <div class="card">
+            <h3 class="card-header text-uppercase">Search for a city</h3>
+            <form id="user-form" class="card-body">
+                <label class="form-label" for="username">City</label>
+                <input name="username" id="username" type="text" autofocus="true" class="form-input" />
+                <button type="submit" class="btn">Search</button>
+            </form>
+        </div>
+        <div class="card">
+            <div id="city-buttons" class="card-body">
+                <button class="btn" data-city="javasctript"></button>
+                <button class="btn" data-city="html"></button>
+                <button class="btn" data-city="css"></button>
+            </div>
+        </div>
+    </div>
+
+</html>
