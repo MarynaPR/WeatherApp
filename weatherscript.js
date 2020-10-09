@@ -1,36 +1,12 @@
-
-// GIVEN a weather dashboard with form inputs
-// WHEN I search for a city
+//GIVEN a weather dashboard with form inputs WHEN I search for a city THEN I am presented with current and future conditions for that city and that city is added to the search history
 var apiKeys = "8d27861de0e9d9289a864a13d6ed84d0";
 
-//weather forecast
-function getForecast(searchCity) {
-
-    //fetch request for (Madison) city
-
-    fetch(
-        "http://api.openweathermap.org/data/2.5/weather?q="
-        + searchCity
-        //Madison
-        + "&appid="
-        //8d27861de0e9d9289a864a13d6ed84d0
-        + apiKeys
-        + "units=imperial"
-    )
-        // //convert the response to JSON
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (response) {
-            console.log(getForecast, response);
-        })
-}
-
-
+//fuction to input city
 function searchFavCity(event) {
-    event.preventDefault()
+    // event.preventDefault()
     var searchCity = document.querySelector("#searchCity").value.trim();
-
+    // weatherCall(searchCity);
+    //  citiesSearched(searchCity);
     if (searchCity) {
         getForecast(searchCity);
         citiesSearched();
@@ -39,66 +15,75 @@ function searchFavCity(event) {
     else {
         alert("Select a City");
     }
-    document.querySelector("#citiesSearched").value = "";
+    //document.querySelector("#citySearched").value = "";
 }
-
-
-function citiesSearched() {
-    //get the city names
-    //  var cityName = $("cityName").value;
-    //  var apiCall = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=8d27861de0e9d9289a864a13d6ed84d0";
-    //list
-    for (var i = 0; i < cities.length; i++) {
-        var itemToDo = onclick("#submit");
-        itemToDo.text(cities[i]);
-        //to click on each citySearched add onclick button
-        $("#citiesSearched").append(itemToDo);
-        itemToDo.click(function () {
-            var text = this.text;
-            //weatherCall(text);
-            //getForecast(text);
-        })
-    }
-}
-
-$("#searchBtn").click(searchFavCity);
 
 // store cities searched
-function storeCitiesSearched() {
+function storeFavCity() {
+    var displayCity = document.getElementById("");
+    var searchCity = document.getElementById("searchCity");
+
+    displayCity.innerHTML = "weather in" + searchCity.value;
+
     localStorage.setItem("cityStorage", JSON.stringify(cities));
 }
 var cities = JSON.parse(localStorage.getItem("cityStorage")) || [];
 
-function weatherCall() {
 
+//function for weather for today
+function weatherCall() {
     //console.log("get the weather!")
     fetch(
-        "http://api.openweathermap.org/data/2.5/weather?q=cityName&appid=8d27861de0e9d9289a864a13d6ed84d0"
+        "http://api.openweathermap.org/data/2.5/weather?q="
+        + searchCity
+        + "&appid=8d27861de0e9d9289a864a13d6ed84d0&units=imperial"
     )
         .then(function (response) {
             return response.json();
         })
-    then(function (response) {
-        var searchCity = response.querySelector[0].title;
-        //display
-        var responseHeaderEl = document.quarySelector("#")
-        responseContainerEl.innerHTML = "<h2>" + searchCity + "</h2>";
-    })
+        .then(function (data) {
 
-    return fetch(
+
+            var searchCity = response.querySelector[0].title;
+            //display
+            var responseHeaderEl = document.quarySelector("#")
+            responseContainerEl.innerHTML = "<h2>" + searchCity + "</h2>";
+        })
+
+    // return fetch(
+    //     "http://api.openweathermap.org/data/2.5/weather?q="
+    //     + searchCity
+    //     //Madison
+    //     + "&appid="
+    //     //8d27861de0e9d9289a864a13d6ed84d0
+    //     + apiKeys
+    //     + "units=imperial"
+    // )
+}
+//weather forecast
+function getForecast(searchCity) {
+    //fetch request
+    fetch(
         "http://api.openweathermap.org/data/2.5/weather?q="
         + searchCity
-        //Madison
         + "&appid="
         //8d27861de0e9d9289a864a13d6ed84d0
         + apiKeys
         + "units=imperial"
     )
+        //convert the response to JSON
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(getForecast, response);
+        })
 }
-//     //clear our celection
-//     $(".weatherResponse").html("");
-//    
 
+document.querySelector("#searchBtn").addEventListener("click", searchFavCity);
+
+
+//     $(".weatherResponse").html("");//clear
 //     $.getJSON(apiCall, weatherCallback);
 //     //function to call the data
 //     //var weatherCallback = function (weatherData) {
@@ -114,6 +99,3 @@ function weatherCall() {
 //         //console.log(weatherData.name,
 //         //   weatherData.sys.country,
 //         //  weatherData.weather[0].description);
-//     }
-// }
-// start();
