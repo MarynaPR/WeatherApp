@@ -6,38 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>WeatherApp</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="weatherscript.js"></script>
+    <title>Weather App</title>
 </head>
 
-<body class="flex-column min-100-vh">
-    <header class="hero"></header>
-    <span id="weather-name"></span>
-    <h1 class="app-title">Weather Dashboard</h1>
-    <!-- <ul class="list-group">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-    </ul> -->
-</body>
+<body>
 
-<main class="flex-row justify-space-between">
-    <div class="col-12 col-md-4">
-        <div class="card">
-            <h3 class="card-header text-uppercase">Search for a city</h3>
-            <form id="user-form" class="card-body">
-                <label class="form-label" for="username">City</label>
-                <input name="username" id="username" type="text" autofocus="true" class="form-input" />
-                <button type="submit" class="btn">Search</button>
-            </form>
-        </div>
-        <div class="card">
-            <div id="city-buttons" class="card-body">
-                <button class="btn" data-city="javasctript"></button>
-                <button class="btn" data-city="html"></button>
-                <button class="btn" data-city="css"></button>
+    <!-- <body class="flex-column min-100-vh">
+    <header class="container-fluid text-center"></header>
+     <span id="weather-name"></span> -->
+    <h1 class="app-title">Weather Dashboard</h1>
+
+    <!-- <main class="flex-row justify-space-between">
+        <div class="col-12 col-md-4">
+            <div class="card">
+                <h3 class="card-header text-uppercase">Search for a city</h3>
+                <form id="user-form" class="card-body">
+                    <label class="form-label" for="username">City</label>
+                    <input name="username" id="username" type="text" autofocus="true" class="form-input" />
+                    <button type="submit" class="btn">Search</button>
+                </form>
             </div>
-        </div>
+            <div class="card">
+            </div> -->
+    <!-- add div for weatherResponse -->
+    <input type="text" id="cityName">
+    <button onclick="" id="submit">
+        <!--onclick= getWeather() -->
+        Enter a city</button>
+    <div class="weatherResponse">
+
     </div>
+
+</body>
 
 </html>
