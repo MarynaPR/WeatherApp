@@ -24,13 +24,13 @@
     <main class="container-fluid">
         <div class="col-12 col-md-4">
             <h3>Search for a city</h3>
-            <form id="city-form" class="card-body">
+            <div class="form-inline form-group">
                 <input name="city" id="searchCity" type="text" autofocus="true" class="form-input" />
                 <button class="btn" id="searchBtn">Search</button>
-            </form>
+            </div>
 
             <!-- add div where searched Cities go -->
-            <div class="list-group storeFavCity"></div>
+            <ul class="list-group storedFavCity"></ul>
             </aside>
 
             <!-- add div for city&weatherResponse -->
@@ -42,7 +42,7 @@
             </div>
         </div>
     </main>
-    <!-- bootstrap links -->
+    <!-- bootstrap and jquery links -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
